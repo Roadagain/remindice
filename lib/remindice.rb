@@ -8,6 +8,13 @@ module Remindice
     def tasks
       @@tasks.clone
     end
+
+    def save
+      file = File.open(TASK_FILENAME, "w")
+      tasks.each do |i|
+        file.puts i
+      end
+    end
   end
   class Commands < Thor
   end

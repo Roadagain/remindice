@@ -3,7 +3,7 @@ require "thor"
 
 module Remindice
   TASK_FILENAME = File.expand_path("~/.reamindice_tasks")
-  @@tasks = if File.exists?(TASK_FILENAME); File.readlines(TASK_FILENAME) else [] end
+
   class << self
     def tasks
       @@tasks.clone
@@ -17,5 +17,6 @@ module Remindice
     end
   end
   class Commands < Thor
+    @@tasks = if File.exists?(Remindice::TASK_FILENAME); File.readlines(Remindice::TASK_FILENAME) else [] end
   end
 end

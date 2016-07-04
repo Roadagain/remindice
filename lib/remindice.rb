@@ -35,5 +35,18 @@ module Remindice
       end
       Remindice.save @@tasks
     end
+
+    desc 'remove TASKS', 'Remove tasks'
+    def remove(*task)
+      task.each do |i|
+        if @@tasks.include? i
+          @@tasks.delete i
+          puts "'#{i}' is successfully removed"
+        else
+          STDERR.puts "'#{i}' does not exist"
+        end
+      end
+      Remindice.save @@tasks
+    end
   end
 end

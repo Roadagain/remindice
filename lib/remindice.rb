@@ -17,7 +17,11 @@ module Remindice
     end
   end
   class Commands < Thor
-    @@tasks = if File.exists?(Remindice::TASK_FILENAME); File.readlines(Remindice::TASK_FILENAME) else [] end
+    if File.exists?(Remindice::TASK_FILENAME)
+      @@tasks = File.readlines(Remindice::TASK_FILENAME).map{|i| i.chomp}
+    else
+      @@tasks = []
+    end
 
     desc 'add TASKS', 'Add tasks'
     def add(*task)

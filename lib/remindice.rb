@@ -1,5 +1,7 @@
 require "remindice/version"
+require "thor"
 
 module Remindice
-  # Your code goes here...
+  class Commands < Thor
+  end
 end

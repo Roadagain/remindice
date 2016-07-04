@@ -2,7 +2,7 @@ require "remindice/version"
 require "thor"
 
 module Remindice
-  TASK_FILENAME = File.expand_path("~/.reamindice_tasks")
+  TASK_FILENAME = File.expand_path("~/.remindice_tasks")
 
   class << self
     def tasks

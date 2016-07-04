@@ -22,7 +22,12 @@ module Remindice
     desc 'add TASKS', 'Add tasks'
     def add(*task)
       task.each do |i|
-        @@tasks << i
+        if @@tasks.include? i
+          STDERR.puts "'#{i}' is already added"
+        else
+          @@tasks << i
+          puts "'#{i}' is successfully added"
+        end
       end
       Remindice.save @@tasks
     end

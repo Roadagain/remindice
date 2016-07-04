@@ -9,7 +9,7 @@ module Remindice
       @@tasks.clone
     end
 
-    def save
+    def save(tasks)
       file = File.open(TASK_FILENAME, "w")
       tasks.each do |i|
         file.puts i

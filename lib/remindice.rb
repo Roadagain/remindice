@@ -35,5 +35,12 @@ module Remindice
       end
       Remindice.save @@tasks
     end
+
+    desc 'list', 'List tasks'
+    def list
+      @@tasks.each do |i|
+        puts i
+      end
+    end
   end
 end

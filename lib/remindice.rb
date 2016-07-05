@@ -60,5 +60,12 @@ module Remindice
       Remindice.save []
       puts "Tasks are successfully cleared"
     end
+
+    desc 'list', 'List tasks'
+    def list
+      @@tasks.each do |i|
+        puts i
+      end
+    end
   end
 end

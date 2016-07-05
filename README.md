@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`$ remindice add "write reports" "attend a programming contest"`
+`$ remindice remove "throw up a tooth`
+`$ remindice clear` (You can also use `remove` with `--all` or `-a` instead of this)
+`$ remindice list`
+`$ remindice roll`
 
 ## Development
 

@@ -67,5 +67,10 @@ module Remindice
         puts i
       end
     end
+
+    desc 'roll', 'Choose a task randomly'
+    def roll
+      puts @@tasks.sample
+    end
   end
 end

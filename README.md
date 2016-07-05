@@ -22,11 +22,13 @@ Or install it yourself as:
 
 ## Usage
 
-`$ remindice add "write reports" "attend a programming contest"`
-`$ remindice remove "throw up a tooth`
-`$ remindice clear` (You can also use `remove` with `--all` or `-a` instead of this)
-`$ remindice list`
-`$ remindice roll`
+```
+$ remindice add "write reports" "attend a programming contest"
+$ remindice remove "throw up a tooth
+$ remindice clear # You can also use `remove` with `--all` or `-a` instead of this
+$ remindice list
+$ remindice roll
+```
 
 ## Development
 

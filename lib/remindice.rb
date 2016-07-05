@@ -36,17 +36,29 @@ module Remindice
       Remindice.save @@tasks
     end
 
+    option :all, :type => :boolean, :aliases => :a
     desc 'remove TASKS', 'Remove tasks'
     def remove(*task)
-      task.each do |i|
-        if @@tasks.include? i
-          @@tasks.delete i
-          puts "'#{i}' is successfully removed"
-        else
-          STDERR.puts "'#{i}' does not exist"
+      if options[:all]
+        clear
+        return
+      else
+        task.each do |i|
+          if @@tasks.include? i
+            @@tasks.delete i
+            puts "'#{i}' is successfully removed"
+          else
+            STDERR.puts "'#{i}' does not exist"
+          end
         end
+        Remindice.save @@tasks
       end
-      Remindice.save @@tasks
+    end
+
+    desc 'clear', 'Clear tasks'
+    def clear
+      Remindice.save []
+      puts "Tasks are successfully cleared"
     end
   end
 end
